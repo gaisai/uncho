@@ -6,6 +6,7 @@ function aaa(){
 	t=rh+rh*Math.sin((5*i/fps)*2*Math.PI)
 	l=rw+rw*Math.cos((5*i/fps)*2*Math.PI)
 
+	a.style.transform="rotate("+5*360/fps*i+"deg)"
 	a.style.top=t
 	a.style.left=l
 
@@ -47,6 +48,8 @@ h=50
 a.style.width=w
 a.style.height=h
 a.style.borderRadius="50%"
+//a.style.transform="rotate(30deg)"
+a.style.transform="rotateX(deg)"
 
 var w,h,t,l,log,olog,rw,rh
 var r=100
