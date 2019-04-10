@@ -1,10 +1,10 @@
 
 function aaa(){
 
-	rh=window.innerHeight/4
-	rw=window.innerWidth/4
-	t=rh+rh*Math.sin(i*5/360)
-	l=rw+rw*Math.cos(i*5/360)
+	rh=(window.innerHeight-h)/2
+	rw=(window.innerWidth-w)/2
+	t=rh+rh*Math.sin((3*i/fps)*2*Math.PI)
+	l=rw+rw*Math.cos((3*i/fps)*2*Math.PI)
 
 	a.style.top=t
 	a.style.left=l
@@ -16,21 +16,31 @@ function aaa(){
 		console.log("(w,h)="+log);
 	}
 
-	setTimeout(aaa,3);
+	setTimeout(aaa,1000/fps);
+	b.innerHTML=Math.floor(1000/fps*i%1000%10)
+	if(i>fps){
+		i=i%fps
+		console.log(j)
+		j++
+	}
 }
 
-i=0
+fps=300
+var i=0,j=0
+
 var a=document.getElementById("ma-n");
+var b=document.getElementById("ha");
 a.style.position="relative"
 a.style.backgroundColor="red"
 //a.style.display=block
-a.style.width="50%"
-a.style.height="50%"
+w=30
+h=30
+a.style.width=w
+a.style.height=h
 
 var w,h,t,l,log,olog,rw,rh
 var r=100
 
-var a=document.getElementById("ma-n");
 a.innerHTML="<center>ww<br>ww</center>";
 console.log("ha?");
 
